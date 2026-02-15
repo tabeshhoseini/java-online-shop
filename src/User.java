@@ -33,6 +33,15 @@ public class User {
         return null;
     }
 
+    public boolean checkCartExist(int id) {
+        for (Cart i : shoppingCarts) {
+            if (id == i.getId()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void printUser() {
         System.out.println(
                 "username: " + this.username + " | balance: " + this.balance + "$ | award points: " + this.award);

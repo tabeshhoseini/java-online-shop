@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class UI {
     static Scanner inputReader = new Scanner(System.in);
-    static Admin admin = new Admin("Admin", 12345);
+    static Admin admin = new Admin("admin", 12345);
     // we can have other admins
 
     public static void runApplication() {
@@ -13,6 +13,7 @@ public class UI {
             userChoice = getUserInt("choose your rule.");
             switch (userChoice) {
                 case 1:
+                    adminLogin();
                     adminPanel();
                     break;
                 case 2:
@@ -53,6 +54,20 @@ public class UI {
     }
 
     // Admin panel
+
+    private static void adminLogin() {
+        while (true) {
+            String username = getUserString("enter your username");
+            int password = getUserInt("enter your password");
+            if (admin.getName().equals(username) && admin.getPassword() == password) {
+                System.out.println("successful login!");
+                break;
+            } else {
+                System.out.println("wrong username or password, try again.");
+            }
+        }
+    }
+
     private static void adminPanel() {
         int choice;
         do {
@@ -218,7 +233,7 @@ public class UI {
                     break;
                 case 4:
                     int id = user.addShoppingCart();
-                    System.out.println("the new shopping cart the id of " + id + " is added");
+                    System.out.println("the new shopping cart with the id of " + id + " is added");
                     break;
                 case 5:
                     int cancelId = getUserInt("enter the id of the shopping cart you want to cancel");
@@ -277,9 +292,13 @@ public class UI {
         int id = getUserInt("enter the shopping cart id: ");
         String name = getUserString("what product do you want?");
         int quentity = getUserInt("how many do you want?");
-        Cart cart = user.getOneCart(id);
 
-        cart.addItem(name, quentity);
+        if (user.checkCartExist(id)) {
+            Cart cart = user.getOneCart(id);
+            cart.addItem(name, quentity);
+        } else {
+            System.out.println("shopping cart not found");
+        }
     }
 
 }
