@@ -61,10 +61,12 @@ public class User {
 
     public void cancelShoppingCart(int id) {
         for (Cart i : shoppingCarts) {
-            if (i.getId() == id) {
+            if (i.getId() == id && !i.getStatus().equals("ordered")) {
                 i.setStatus("cancelled");
+                return;
             }
         }
+        System.out.println("shopping cart not found");
     }
 
     public void orderShoppingCart(int id, boolean useAward) {
