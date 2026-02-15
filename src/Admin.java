@@ -67,8 +67,9 @@ public class Admin {
     public static void showAllOrders() {
         for (User i : users) {
             i.printUser();
-            System.err.print("  ");
+
             for (Cart j : i.getShoppingCarts()) {
+                System.err.print("  ");
                 j.printCart(i.getUsername());
             }
             System.out.println();

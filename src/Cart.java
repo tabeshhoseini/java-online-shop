@@ -42,7 +42,7 @@ public class Cart {
         System.out.println("shopping cart id: " + this.id + " | cart owner: " + user + " | cart status: " + status
                 + " | list of products: ");
         for (CartItem i : items) {
-            System.out.print("  ");
+            System.out.print("       ");
             i.printProduct();
         }
     }
@@ -60,13 +60,11 @@ public class Cart {
                     break;
                 } else {
                     System.out.println("no enough stock");
+                    return;
                 }
-
-            } else {
-                System.out.println("product not found");
             }
-
         }
+        System.out.println("product not found");
     }
 
     public void deleteItem(String name) {
