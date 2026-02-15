@@ -57,7 +57,7 @@ public class Cart {
 
                     int oldStock = i.getProductStock();
                     i.changeStock(oldStock - quentity);
-                    break;
+                    return;
                 } else {
                     System.out.println("no enough stock");
                     return;
