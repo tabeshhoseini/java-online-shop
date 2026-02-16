@@ -12,6 +12,7 @@ public class User {
         this.balance = balance;
     }
 
+    // getters
     public int getAward() {
         return award;
     }
@@ -83,7 +84,7 @@ public class User {
                         award += 1;
                     }
                 }
-                System.out.println("thanks for your purhcase, the final cost is : " + i.countCost() + "$");
+                System.out.println("thanks for your purchase, the final cost is : " + i.countCost() + "$");
                 return;
             }
         }

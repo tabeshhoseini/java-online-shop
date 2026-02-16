@@ -14,6 +14,7 @@ public class Cart {
         this.status = "waiting";
     }
 
+    // getters
     public String getOwner() {
         return owner;
     }
@@ -30,13 +31,14 @@ public class Cart {
         return items;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    private int getNextId() {
+    private static int getNextId() {
         baseId++;
         return baseId;
+    }
+
+    // setters
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public void printCart(String user) {
@@ -57,7 +59,7 @@ public class Cart {
                     items.add(item);
 
                     int oldStock = i.getProductStock();
-                    i.changeStock(oldStock - quantity);
+                    i.setStock(oldStock - quantity);
                     return;
                 } else {
                     System.out.println("no enough stock");
@@ -66,6 +68,7 @@ public class Cart {
             }
         }
         System.out.println("product not found");
+        return;
     }
 
     public void deleteItem(String name) {

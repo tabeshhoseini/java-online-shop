@@ -2,8 +2,10 @@ import java.util.Scanner;
 
 public class UI {
     static Scanner inputReader = new Scanner(System.in);
+
+    // here is your username and password as an admin but you can have other admin
+    // in the program.
     static Admin admin = new Admin("admin", 12345);
-    // we can have other admins
 
     public static void runApplication() {
 
@@ -159,10 +161,10 @@ public class UI {
 
             if (choice == 1) {
                 int stock = getUserInt("enter the new stock");
-                Admin.changeStock(name, stock);
+                Admin.setStock(name, stock);
             } else if (choice == 2) {
                 int price = getUserInt("enter the new price");
-                Admin.changePrice(name, price);
+                Admin.setPrice(name, price);
             } else {
                 System.out.println("enter a valid number");
             }

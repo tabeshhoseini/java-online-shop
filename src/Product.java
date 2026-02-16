@@ -1,5 +1,5 @@
 public class Product {
-    private static int base_id = 0;
+    private static int baseId = 0;
 
     private String name;
     private int stock;
@@ -15,15 +15,10 @@ public class Product {
         this.category = category;
     }
 
+    // getters
     private static int nextId() {
-        base_id++;
-        return base_id;
-    }
-
-    public void printProduct() {
-        System.out
-                .println("name: " + this.name + " | product id: " + this.id + " | price: " + this.price + "$ | stock: "
-                        + this.stock + " | category: " + this.category);
+        baseId++;
+        return baseId;
     }
 
     public String getProductName() {
@@ -42,11 +37,12 @@ public class Product {
         return this.price;
     }
 
-    public void changeStock(int newStock) {
+    // setters
+    public void setStock(int newStock) {
         this.stock = newStock;
     }
 
-    public void changePrice(int newPrice) {
+    public void setPrice(int newPrice) {
         this.price = newPrice;
     }
 
@@ -56,5 +52,11 @@ public class Product {
         } else {
             return false;
         }
+    }
+
+    public void printProduct() {
+        System.out
+                .println("name: " + this.name + " | product id: " + this.id + " | price: " + this.price + "$ | stock: "
+                        + this.stock + " | category: " + this.category);
     }
 }

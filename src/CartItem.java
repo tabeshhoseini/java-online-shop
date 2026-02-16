@@ -9,6 +9,7 @@ public class CartItem {
         this.price = price;
     }
 
+    // getters
     public String getName() {
         return name;
     }
@@ -21,6 +22,7 @@ public class CartItem {
         return this.price * this.quantity;
     }
 
+    // setters
     public void setquantity(int quantity) {
         this.quantity = quantity;
     }

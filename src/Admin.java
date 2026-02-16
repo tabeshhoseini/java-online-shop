@@ -15,6 +15,7 @@ public class Admin {
         this.password = password;
     }
 
+    // getters
     public String getName() {
         return this.name;
     }
@@ -98,7 +99,7 @@ public class Admin {
         for (Product i : products) {
             if (i.getProductName().equals(name)) {
                 i.printProduct();
-                break;
+                return;
             }
         }
         System.out.println("product not found");
@@ -108,22 +109,25 @@ public class Admin {
         for (Product i : products) {
             if (i.getProductName().equals(name)) {
                 products.remove(i);
+                break;
             }
         }
     }
 
-    public static void changeStock(String name, int newStock) {
+    public static void setStock(String name, int newStock) {
         for (Product i : products) {
             if (i.getProductName().equals(name)) {
-                i.changeStock(newStock);
+                i.setStock(newStock);
+                break;
             }
         }
     }
 
-    public static void changePrice(String name, int newPrice) {
+    public static void setPrice(String name, int newPrice) {
         for (Product i : products) {
             if (i.getProductName().equals(name)) {
-                i.changePrice(newPrice);
+                i.setPrice(newPrice);
+                break;
             }
         }
     }
