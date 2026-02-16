@@ -76,7 +76,7 @@ public class Admin {
         }
     }
 
-    public static boolean checkAvailablity(String name) {
+    public static boolean checkAvailability(String name) {
         for (Product i : products) {
             if (i.getProductName().equals(name)) {
                 return true;

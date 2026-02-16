@@ -1,5 +1,5 @@
 public class Product {
-    static int base_id = 0;
+    private static int base_id = 0;
 
     private String name;
     private int stock;

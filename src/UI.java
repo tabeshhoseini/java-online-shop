@@ -148,7 +148,7 @@ public class UI {
 
         do {
             String name = getUserString("enter the name of the product");
-            if (!Admin.checkAvailablity(name)) {
+            if (!Admin.checkAvailability(name)) {
                 System.out.println("we dont have such a product");
                 continue;
             }
@@ -291,11 +291,11 @@ public class UI {
     private static void addItemsToCart(User user) {
         int id = getUserInt("enter the shopping cart id: ");
         String name = getUserString("what product do you want?");
-        int quentity = getUserInt("how many do you want?");
+        int quantity = getUserInt("how many do you want?");
 
         if (user.checkCartExist(id)) {
             Cart cart = user.getOneCart(id);
-            cart.addItem(name, quentity);
+            cart.addItem(name, quantity);
         } else {
             System.out.println("shopping cart not found");
         }

@@ -1,12 +1,11 @@
 public class CartItem {
     private String name;
-    private int quentity;
+    private int quantity;
     private int price;
-    // private int cost = price * quentity;
 
-    public CartItem(String name, int quentity, int price) {
+    public CartItem(String name, int quantity, int price) {
         this.name = name;
-        this.quentity = quentity;
+        this.quantity = quantity;
         this.price = price;
     }
 
@@ -14,21 +13,20 @@ public class CartItem {
         return name;
     }
 
-    public int getQuentity() {
-        return quentity;
+    public int getquantity() {
+        return quantity;
     }
 
     public int getCost() {
-        return this.price * this.quentity;
+        return this.price * this.quantity;
     }
 
-    public void setQuentity(int quentity) {
-        this.quentity = quentity;
-        // this.cost = this.price * this.quentity;
+    public void setquantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public void printProduct() {
-        System.out.println("name: " + this.name + " | price: " + this.price + " | quentity: " + this.quentity);
+        System.out.println("name: " + this.name + " | price: " + this.price + " | quantity: " + this.quantity);
     }
 
 }

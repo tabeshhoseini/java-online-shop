@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
 public class Cart {
-    static int baseId = 0;
+    private static int baseId = 0;
+
     private String owner;
     private String status;
     private int id;
@@ -47,16 +48,16 @@ public class Cart {
         }
     }
 
-    public void addItem(String name, int quentity) {
+    public void addItem(String name, int quantity) {
         for (Product i : Admin.getProducts()) {
             if (i.getProductName().equals(name)) {
-                if (i.checkStock(quentity)) {
+                if (i.checkStock(quantity)) {
                     int price = i.getProductPrice();
-                    CartItem item = new CartItem(name, quentity, price);
+                    CartItem item = new CartItem(name, quantity, price);
                     items.add(item);
 
                     int oldStock = i.getProductStock();
-                    i.changeStock(oldStock - quentity);
+                    i.changeStock(oldStock - quantity);
                     return;
                 } else {
                     System.out.println("no enough stock");
@@ -76,10 +77,10 @@ public class Cart {
         }
     }
 
-    public void changeQuentity(String name, int quentity) {
+    public void changequantity(String name, int quantity) {
         for (CartItem i : items) {
             if (i.getName().equals(name)) {
-                i.setQuentity(quentity);
+                i.setquantity(quantity);
                 break;
             }
         }
