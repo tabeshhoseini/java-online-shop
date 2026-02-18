@@ -14,7 +14,7 @@ public class CartItem {
         return name;
     }
 
-    public int getquantity() {
+    public int getQuantity() {
         return quantity;
     }
 
@@ -23,7 +23,7 @@ public class CartItem {
     }
 
     // setters
-    public void setquantity(int quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 

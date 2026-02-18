@@ -83,7 +83,7 @@ public class Cart {
     public void changequantity(String name, int quantity) {
         for (CartItem i : items) {
             if (i.getName().equals(name)) {
-                i.setquantity(quantity);
+                i.setQuantity(quantity);
                 break;
             }
         }
