@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class UI {
     static Scanner inputReader = new Scanner(System.in);
 
-    // here is your username and password as an admin but you can have other admin
+    // here is your username and password as an admin but you can have other admins
     // in the program.
     static Admin admin = new Admin("admin", 12345);
 
@@ -250,6 +250,8 @@ public class UI {
                 case 8:
                     user.showShoppingCarts();
                     break;
+                case 9:
+                    System.out.println("your balance is : " + user.getBalance() + "$");
                 case 0:
                     break;
 
@@ -271,6 +273,7 @@ public class UI {
                 "6. Add items to a shopping cart\n" +
                 "7. Order a shopping cart\n" +
                 "8. See all shopping carts\n" +
+                "9. Check balance\n" +
                 "0. Exit");
     }
 
@@ -302,5 +305,4 @@ public class UI {
             System.out.println("shopping cart not found");
         }
     }
-
 }

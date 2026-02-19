@@ -21,6 +21,10 @@ public class User {
         return username;
     }
 
+    public int getBalance() {
+        return balance;
+    }
+
     public ArrayList<Cart> getShoppingCarts() {
         return shoppingCarts;
     }
