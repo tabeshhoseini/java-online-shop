@@ -162,9 +162,13 @@ public class UI {
             if (choice == 1) {
                 int stock = getUserInt("enter the new stock");
                 Admin.setStock(name, stock);
+                System.out.println("stock is changed successfully!");
+                break;
             } else if (choice == 2) {
                 int price = getUserInt("enter the new price");
+                System.out.println("price is changed successfully!");
                 Admin.setPrice(name, price);
+                break;
             } else {
                 System.out.println("enter a valid number");
             }
